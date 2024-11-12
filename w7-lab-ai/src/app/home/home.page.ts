@@ -88,6 +88,8 @@ export class HomePage {
       // Remove HTML line breaks before copying
       const plainText = this.output.replace(/<br>/g, '\n');
       await navigator.clipboard.writeText(plainText);
+      // copy to local storage
+      localStorage.setItem('recipe', plainText);
     } catch (err) {
       console.error('Failed to copy recipe:', err);
     }
